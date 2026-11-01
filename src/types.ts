@@ -367,6 +367,24 @@ export interface OptionsPnpm extends OptionsIsInEditor, OptionsStylistic {
   sort?: boolean
 }
 
+export interface OptionsBaseline extends OptionsOverrides {
+  /**
+   * Baseline target.
+   *
+   * A year reports features that entered Baseline after that year.
+   *
+   * @default 'widely'
+   */
+  available?: 'widely' | 'newly' | number
+
+  /**
+   * Severity of `baseline-js/use-baseline`.
+   *
+   * @default 'error'
+   */
+  level?: 'error' | 'warn'
+}
+
 export interface OptionsUnoCSS extends OptionsOverrides {
   /**
    * Enable attributify support.
@@ -527,6 +545,16 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    * @default false
    */
   astro?: boolean | OptionsOverrides
+
+  /**
+   * Enable Baseline checks for JavaScript and TypeScript.
+   *
+   * Requires installing:
+   * - `eslint-plugin-baseline-js`
+   *
+   * @default false
+   */
+  baseline?: boolean | OptionsBaseline
 
   /**
    * Enable Angular support.

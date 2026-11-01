@@ -54,6 +54,7 @@
     "astro-eslint-parser": ">=1.0.2",
     "eslint": "^9.10.0 || ^10.0.0",
     "eslint-plugin-astro": ">=1.2.0",
+    "eslint-plugin-baseline-js": "^0.7.6",
     "eslint-plugin-erasable-syntax-only": "^0.7.1",
     "eslint-plugin-format": ">=0.1.0",
     "eslint-plugin-jsx-a11y": ">=6.10.2",
@@ -93,6 +94,9 @@
       "optional": true
     },
     "eslint-plugin-astro": {
+      "optional": true
+    },
+    "eslint-plugin-baseline-js": {
       "optional": true
     },
     "eslint-plugin-erasable-syntax-only": {
@@ -189,6 +193,7 @@
     "bumpp": "catalog:dev",
     "eslint": "catalog:peer",
     "eslint-plugin-astro": "catalog:peer",
+    "eslint-plugin-baseline-js": "catalog:peer",
     "eslint-plugin-erasable-syntax-only": "catalog:peer",
     "eslint-plugin-format": "catalog:peer",
     "eslint-plugin-jsx-a11y": "catalog:peer",

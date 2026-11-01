@@ -9,6 +9,7 @@ import {
   angular,
   antislop,
   astro,
+  baseline,
   command,
   comments,
   disables,
@@ -93,6 +94,7 @@ export function antfu(
     antislop: enableAntislop = false,
     astro: enableAstro = false,
     autoRenamePlugins = true,
+    baseline: enableBaseline = false,
     componentExts = [],
     e18e: enableE18e = true,
     gitignore: enableGitignore = true,
@@ -351,6 +353,15 @@ export function antfu(
       astro({
         overrides: getOverrides(options, 'astro'),
         stylistic: stylisticOptions,
+      }),
+    )
+  }
+
+  if (enableBaseline) {
+    configs.push(
+      baseline({
+        ...resolveSubOptions(options, 'baseline'),
+        overrides: getOverrides(options, 'baseline'),
       }),
     )
   }

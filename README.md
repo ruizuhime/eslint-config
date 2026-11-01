@@ -7,7 +7,7 @@
 - Designed to work with TypeScript, JSX, Vue, JSON, YAML, Toml, Markdown, etc. Out-of-box.
 - Opinionated, but [very customizable](#customization)
 - [ESLint Flat config](https://eslint.org/docs/latest/use/configure/configuration-files-new), compose easily!
-- Optional [React](#react), [Next.js](#nextjs), [Svelte](#svelte), [UnoCSS](#unocss), [Astro](#astro), [Solid](#solid) support
+- Optional [React](#react), [Next.js](#nextjs), [Svelte](#svelte), [UnoCSS](#unocss), [Astro](#astro), [Solid](#solid), [Baseline](#baseline) support
 - Optional [formatters](#formatters) support for formatting CSS, HTML, XML, etc.
 - **Style principle**: Minimal for reading, stable for diff, consistent
   - Sorted imports, dangling commas
@@ -779,6 +779,35 @@ Running `npx eslint` should prompt you to install the required dependencies, oth
 
 ```bash
 npm i -D eslint-plugin-solid
+```
+
+#### Baseline
+
+To enable Baseline checks, you need to explicitly turn it on:
+
+```js
+// eslint.config.js
+import antfu from '@antfu/eslint-config'
+
+export default antfu({
+  baseline: true,
+})
+```
+
+`baseline: true` uses `available: 'widely'`. Pass a year to report newer features:
+
+```js
+export default antfu({
+  baseline: {
+    available: 2023,
+  },
+})
+```
+
+Running `npx eslint` should prompt you to install the required dependencies, otherwise, you can install them manually:
+
+```bash
+npm i -D eslint-plugin-baseline-js
 ```
 
 #### UnoCSS

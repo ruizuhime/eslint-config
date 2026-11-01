@@ -1,6 +1,7 @@
 export * from './angular'
 export * from './antislop'
 export * from './astro'
+export * from './baseline'
 export * from './command'
 export * from './comments'
 export * from './disables'
